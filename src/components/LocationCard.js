@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 
 import styled from "styled-components"
-import axios from "axios";
 
 const StyledCard2 = styled.span`
   width: 800px;

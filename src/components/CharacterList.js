@@ -1,19 +1,8 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components"
-
-//import fakedata
-import {chardata} from "./tempdata";
-
-//import CharacterCard
-
 import CharacterCard from "./CharacterCard";
-
 import SearchForm from "./SearchForm"
-
-
-
-//styling
 import {PageTitle, CardList} from "./Header"
+import axios from "axios"
 
 
 
@@ -27,14 +16,19 @@ export default function CharacterList() {
   //   //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
   // }, []);
 
-  const [data, setData] = useState([chardata.results]);
+  const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
 
   useEffect(()=> {
-    const characters = chardata.results.filter(character =>
-      character.name.toLowerCase().includes(query.toLowerCase())
-      );
-      setData(characters);
+    axios.get("https://rickandmortyapi.com/api/character/")
+      .then(response=> {
+        const characters = response.data.results.filter(character =>
+          character.name.toLowerCase().includes(query.toLowerCase())
+          );
+        setData(characters);
+    })
+
+      
   }, [query])
 
   const handleChange = event => {

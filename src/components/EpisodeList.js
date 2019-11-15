@@ -1,40 +1,26 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components"
-
-//import fakedata
-import {episodedata} from "./tempdata";
-
-//import CharacterCard
-
 import EpisodeCard from "./EpisodeCard";
-
 import SearchForm from "./SearchForm"
-
-
-
-//styling
 import {PageTitle, CardList} from "./Header"
+import axios from "axios"
 
 
 
 
 
 export default function EpisodeList() {
-  // TODO: Add useState to track data from useEffect
 
-  // useEffect(() => {
-  //   // TODO: Add API Request here - must run in `useEffect`
-  //   //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
-  // }, []);
-
-  const [data, setData] = useState([episodedata.results]);
+  const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
 
   useEffect(()=> {
-    const episodes = episodedata.results.filter(episode =>
-      episode.name.toLowerCase().includes(query.toLowerCase())
-      );
-      setData(episodes);
+        axios.get("https://rickandmortyapi.com/api/episode/")
+        .then(response => {
+            const episodes = response.data.results.filter(episode =>
+                episode.name.toLowerCase().includes(query.toLowerCase())
+                );
+            setData(episodes);
+        })
   }, [query])
 
   const handleChange = event => {
