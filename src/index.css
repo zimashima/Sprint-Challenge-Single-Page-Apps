@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Ubuntu&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
+
 }
 
 main {
@@ -36,4 +39,23 @@ main {
 
 header h1 {
   text-align: center;
+}
+
+.navLink {
+  color: aqua;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: gold;
+  transform: scale(1.1);
+  transition: 0.2s
+}
+
+.navLink:visited {
+  color: aqua
+}
+
+h1,h2,h3 {
+  font-family: 'Ubuntu', sans-serif;
 }

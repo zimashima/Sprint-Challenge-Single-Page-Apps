@@ -27,7 +27,13 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: Traditionally, on a multipage website, when you click on a link to go to different page, it would require the interaction from client-side, send message to the server, the server process the whole new HTML page, and send it back to display on client-side.
+
+> This would not seem like such a big problem, however, a lot of the time, webpages have the same components, such as navigation and footer, which means the server has to process everything, reload the whole webpage, recreate a lot of DOM elements, just to display a portion of new information. This sounds like a big things to do for a new paragraph of text.
+
+> Especially nowadays when interactive content is pretty much a norm of most of the webpage out there, and is vital element of positive user experience. Traditional way of processing data on server-side would make server to do a lot of things, thus, making  webpage slower, and the page has to reload every time an interactive action happens.
+
+> Client-side routing utilize JavaScript and other tools to make interactive content friendlier to both UI developers and users. Everything would process on users' sides and the page doesn't need to reload. Client-side routing requires deconstructing a webpage into different component, and only change on a certain component. Once a request is made, the data is send from server, and is stored in a 'state' on client-side waiting to be rendered on user interface. This makes developing easier as it would be easier to debug, easier to place components, easier to create interactive content, the page would display the information faster, thus, better user experience, and lesser bandwidth usage.
 
 ## Project Set Up
 
