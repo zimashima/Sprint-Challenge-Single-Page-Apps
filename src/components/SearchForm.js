@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components"
-import {chardata} from "./tempdata"
 
 const SearchBar = styled.input`
   font-size: 20px;
