@@ -41,3 +41,9 @@ export const PageTitle = styled.h2`
   text-align: center;
   font-size: 32px;
 `
+
+export const CardList = styled.section`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+`

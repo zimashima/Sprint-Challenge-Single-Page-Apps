@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components"
 
 //import fakedata
-import {chardata} from "./tempdata";
+import {episodedata} from "./tempdata";
 
 //import CharacterCard
 
-import CharacterCard from "./CharacterCard";
+import EpisodeCard from "./EpisodeCard";
 
 import SearchForm from "./SearchForm"
 
@@ -19,7 +19,7 @@ import {PageTitle, CardList} from "./Header"
 
 
 
-export default function CharacterList() {
+export default function EpisodeList() {
   // TODO: Add useState to track data from useEffect
 
   // useEffect(() => {
@@ -27,14 +27,14 @@ export default function CharacterList() {
   //   //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
   // }, []);
 
-  const [data, setData] = useState([chardata.results]);
+  const [data, setData] = useState([episodedata.results]);
   const [query, setQuery] = useState("");
 
   useEffect(()=> {
-    const characters = chardata.results.filter(character =>
-      character.name.toLowerCase().includes(query.toLowerCase())
+    const episodes = episodedata.results.filter(episode =>
+      episode.name.toLowerCase().includes(query.toLowerCase())
       );
-      setData(characters);
+      setData(episodes);
   }, [query])
 
   const handleChange = event => {
@@ -43,13 +43,13 @@ export default function CharacterList() {
 
   return (
     <div>
-      <PageTitle>Characters</PageTitle>
+      <PageTitle>Episode List</PageTitle>
       <SearchForm handleChange={handleChange}/>
     <CardList>
       
       {
         data.map((each, index)=>(
-          <CharacterCard key={index} name={each.name} status={each.status} gender={each.gender} species={each.species} image={each.image} />
+          <EpisodeCard key={index} name={each.name} air_date={each.air_date} episode={each.episode} />
         ))
       }
     </CardList>

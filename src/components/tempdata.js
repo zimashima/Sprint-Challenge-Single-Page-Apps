@@ -563,7 +563,7 @@ export const locationdata = {
     }]
 }
 
-export const episodedate = {
+export const episodedata = {
     "info": {
         "count": 31,
         "pages": 2,

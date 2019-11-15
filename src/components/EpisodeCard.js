@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 
 import styled from "styled-components"
-import axios from "axios";
 
 const StyledCard2 = styled.span`
   width: 800px;
@@ -19,13 +18,13 @@ const StyledCard2 = styled.span`
   }
 `
 
-export default function LocationCard({ name, type, dimension}) {
+export default function LocationCard({ name, air_date, episode}) {
   return (
 
     <StyledCard2>
       <h3>{name}</h3>
-      <p>Type: {type}</p>
-      <p>Dimension: {dimension}</p>
+      <p>Air Date: {air_date}</p>
+      <p>Episode: {episode}</p>
     </StyledCard2>
   )
 }

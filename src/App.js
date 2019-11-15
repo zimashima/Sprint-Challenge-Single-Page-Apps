@@ -7,6 +7,7 @@ import {Route} from "react-router-dom"
 import WelcomePage from "./components/WelcomePage"
 import CharacterList from "./components/CharacterList"
 import LocationList from "./components/LocationsList"
+import EpisodeList from "./components/EpisodeList"
 
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
       <Route exact path="/" component={WelcomePage} />
       <Route path="/Characters" component={CharacterList} />
       <Route path="/Locations" component={LocationList} />
+      <Route path="/Episodes" component={EpisodeList} />
     </main>
   );
 }
