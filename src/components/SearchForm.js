@@ -11,7 +11,7 @@ const SearchBar = styled.input`
 
 const SearchMainForm = styled.form`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: lightgray;
   margin: 0 auto;
@@ -31,7 +31,7 @@ export default function SearchForm(props) {
   return (
     <section className="search-form">
      <SearchMainForm>
-       <TheLabel>Search By Name</TheLabel>
+       <TheLabel>Search</TheLabel>
        <SearchBar type="text" name="searchbar" onChange={props.handleChange} />
      </SearchMainForm>
     </section>
